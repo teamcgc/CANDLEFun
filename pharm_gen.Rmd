@@ -1,0 +1,47 @@
+---
+title: "CANDLEfun for pharmacogenomics"
+author: "US"
+date: "`r doc_date()`"
+abstract: >
+  Overview of pharmacogenomics datasets and papers.
+output: 
+  BiocStyle::html_document:
+    df_print: paged
+    keep_md: TRUE
+bibliography: references.bib
+nocite: | 
+  @Karczewski2012-yy; @Hafner2017-jw; @Wheeler2013-dn; @El-Hachem2017-cc; @Zhang2015-kx; @Goodspeed2016-jv; @Madhukar2017-fe; @Gayvert2016-zi
+---
+
+```{r include=FALSE}
+library(knitr)
+opts_chunk$set(warning=FALSE, message=FALSE, tidy=TRUE)
+```
+
+# Resources
+
+## [Pharmacodb]
+
+```{r}
+library(dplyr)
+pdb = src_mysql('pharmacodb', host='solexadb.cpmth1vkdqqx.us-east-1.rds.amazonaws.com', user='deeplearn', password = 'deeplearn')
+```
+
+Tables available include:
+
+```{r}
+pdb_t = sapply(db_list_tables(pdb$con),function(tblname) tbl(pdb, tblname), USE.NAMES = TRUE, simplify = FALSE)
+names(pdb_t)
+```
+
+Datasets include:
+
+```{r}
+pdb_t$datasets %>% left_join(pdb_t$source_statistics,c("dataset_id" = "id")) %>% knitr::kable()
+```
+
+[Pharmacodb]: http://pharmacodb.pmgenomics.ca/
+
+# References
+
+
