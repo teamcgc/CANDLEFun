@@ -1,4 +1,6 @@
 
+= Purpose:
+
 Guidelines to run Keras DL model on Biowulf GPU nodes using singularity.
 
 = Setup:
@@ -23,7 +25,7 @@ Clone the CANDLE benchmarks, and supervisor in your data directory:
   $ git clone https://github.com/ECP-CANDLE/Supervisor.git
 ----
 
-= Run 
+= Run:
 
 To run any of the benchmarks on GPU nodes interactively, get a GPU node interactively using:
 
