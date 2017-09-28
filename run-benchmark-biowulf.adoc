@@ -18,11 +18,11 @@ This will automatically bind all the directories on Biowulf to the singularity i
 Clone the CANDLE benchmarks, and supervisor in your data directory:
 
 ----
-$ candle_dir=/data/`whoami`/candle
-$ mkdir $candle_dir
-$ cd $candle_dir
-$ git clone https://github.com/ECP-CANDLE/Benchmarks.git
-$ git clone https://github.com/ECP-CANDLE/Supervisor.git
+candle_dir=/data/`whoami`/candle
+mkdir $candle_dir
+cd $candle_dir
+git clone https://github.com/ECP-CANDLE/Benchmarks.git
+git clone https://github.com/ECP-CANDLE/Supervisor.git
 ----
 
 = Run:
@@ -30,19 +30,19 @@ $ git clone https://github.com/ECP-CANDLE/Supervisor.git
 To run any of the benchmarks on GPU nodes interactively, get a GPU node interactively using:
 
 ----
-$ sinteractive  --gres=gpu:k80:1 --mem=25G
+sinteractive  --gres=gpu:k80:1 --mem=25G
 ----
 
 once on the node run:
 
 ----
-$ module load singularity
-$ singularity exec --nv /data/candle/candle/candle-gpu.img <benchmark-python-script>
+module load singularity
+singularity exec --nv /data/candle/candle/candle-gpu.img <benchmark-python-script>
 ----
 
 
 For example, to run P1B1, run:
 
 ----
-$ singularity exec --nv /data/candle/candle/candle-gpu.img $candle_dir/Benchmarks/Pilot1/P1B1/p1b1_baseline_keras2.py
+singularity exec --nv /data/candle/candle/candle-gpu.img $candle_dir/Benchmarks/Pilot1/P1B1/p1b1_baseline_keras2.py
 ----  
