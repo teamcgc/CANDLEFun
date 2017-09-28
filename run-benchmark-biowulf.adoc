@@ -37,7 +37,7 @@ once on the node run:
 
 ----
 $ module load singularity
-$ singularity exec --nv /data/candle/candle/candle-gpu.img <benchmakr-python-script>
+$ singularity exec --nv /data/candle/candle/candle-gpu.img <benchmark-python-script>
 ----
 
 
