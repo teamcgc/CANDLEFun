@@ -1,0 +1,18 @@
+
+= Purpose:
+
+Guidelines to run the mlrMBO supervisor on Biowulf GPU nodes using singularity.
+
+= Setup:
+
+* Follow the setup instructions in run-benchmark-biowulf.adoc
+
+* Copy the template project /data/classes/candle/mlrmbo-template to your local directory
+
+= Configuration:
+
+Follow the instructions in the readme file: /data/classes/candle/mlrmbo-template/README.md
+
+= Job submission
+
+Follow the instructions in the readme file: /data/classes/candle/mlrmbo-template/swift/README.txt
