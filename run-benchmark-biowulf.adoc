@@ -44,12 +44,12 @@ singularity exec --nv /data/classes/candle/candle-gpu.img <benchmark-python-scri
 For example, to run P1B1, run:
 
 ----
-singularity exec --nv /data/classes/candle/candle-gpu.img $candle_dir/Benchmarks/Pilot1/P1B1/p1b1_baseline_keras2.py
+singularity exec --nv /data/classes/candle/candle-gpu.img /PATH/TO/Benchmarks/Pilot1/P1B1/p1b1_baseline_keras2.py
 ----  
 
 = Interactive work:
 
 ----
-singularity shell /data/classes/candle/candle-gpu.img
+singularity shell --nv /data/classes/candle/candle-gpu.img
 ----
 
